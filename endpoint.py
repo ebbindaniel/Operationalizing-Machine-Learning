@@ -1,17 +1,25 @@
-import requests
+import urllib.request
 import json
+import os
+import ssl
 
-# URL for the web service, should be similar to:
-# 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
-scoring_uri = ''
-# If the service is authenticated, set the key or token
-key = ''
+def allowSelfSignedHttps(allowed):
+    # bypass the server certificate verification on client side
+    if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
+        ssl._create_default_https_context = ssl._create_unverified_context
 
-# Two sets of data to score, so we get two results back
-data = {"data":
-        [
-          {
-            "age": 17,
+allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+
+# Request data goes here
+# The example below assumes JSON formatting which may be updated
+# depending on the format your endpoint expects.
+# More information can be found here:
+# https://docs.microsoft.com/azure/machine-learning/how-to-deploy-advanced-entry-script
+data =  {
+  "Inputs": {
+    "data": [
+      {
+        "age": 17,
             "campaign": 1,
             "cons.conf.idx": -46.2,
             "cons.price.idx": 92.893,
@@ -31,43 +39,35 @@ data = {"data":
             "pdays": 999,
             "poutcome": "failure",
             "previous": 1
-          },
-          {
-            "age": 87,
-            "campaign": 1,
-            "cons.conf.idx": -46.2,
-            "cons.price.idx": 92.893,
-            "contact": "cellular",
-            "day_of_week": "mon",
-            "default": "no",
-            "duration": 471,
-            "education": "university.degree",
-            "emp.var.rate": -1.8,
-            "euribor3m": 1.299,
-            "housing": "yes",
-            "job": "blue-collar",
-            "loan": "yes",
-            "marital": "married",
-            "month": "may",
-            "nr.employed": 5099.1,
-            "pdays": 999,
-            "poutcome": "failure",
-            "previous": 1
-          },
-      ]
-    }
-# Convert to JSON string
-input_data = json.dumps(data)
-with open("data.json", "w") as _f:
-    _f.write(input_data)
+      }
+    ]
+  },
+  "GlobalParameters": {
+    "method": "predict"
+  }
+}
 
-# Set the content type
-headers = {'Content-Type': 'application/json'}
-# If authentication is enabled, set the authorization header
-headers['Authorization'] = f'Bearer {key}'
+body = str.encode(json.dumps(data))
 
-# Make the request and display the response
-resp = requests.post(scoring_uri, input_data, headers=headers)
-print(resp.json())
+url = 'http://a64e9891-f0d2-402d-a754-817290a47997.westeurope.azurecontainer.io/score'
+# Replace this with the primary/secondary key or AMLToken for the endpoint
+api_key = '8HHcTRVmq1naqIo0W1kNge9o1XSbkqO2'
+if not api_key:
+    raise Exception("A key should be provided to invoke the endpoint")
 
 
+headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+
+req = urllib.request.Request(url, body, headers)
+
+try:
+    response = urllib.request.urlopen(req)
+
+    result = response.read()
+    print(result)
+except urllib.error.HTTPError as error:
+    print("The request failed with status code: " + str(error.code))
+
+    # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+    print(error.info())
+    print(error.read().decode("utf8", 'ignore'))
