@@ -1,12 +1,18 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
 
+# Project on Operationalizing-Machine-Learning by Ebbin Daniel
 
-# Your Project Title Here
+This is an end-to-end machine learning project on Microsoft Azure where I have configured an **Automated Machine Learning Model** to run and select the best model and then to deploy and consume it. Based on the best model a pipeline was created to publish and run from a REST endpooint. 
 
-*TODO:* Write an overview to your project.
+**Dataset**
+
+The <a href='https://archive.ics.uci.edu/ml/datasets/Bank+Marketing'>Bank Marketing Dataset</a> was used to train and test the AutoML models. The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. The marketing data consists of various attributes like age,job, education, etc to access if a bank term deposit for a client would be subscribed or not. 
+
+Here we try to train our data on the attributes and we seek to Classify if a bank term deposit for a client would be subscribed or not. 
+
 
 ## Architectural Diagram
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
+![Architecture](screenshots/Architecture.JPG?raw=true "Architecture")
+
 
 ## Key Steps
 *TODO*: Write a short discription of the key steps. Remeber to include all the screenshots required to demonstrate key steps. 
