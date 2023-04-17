@@ -11,7 +11,7 @@ Here we try to train our data on the attributes and we seek to Classify if a ban
 
 
 ## Architectural Diagram
-![Architecture](screenshots/Architecture.JPG?raw=true "Architecture")
+![Architecture](screenshots/Architecture.jpg?raw=true "Architecture")
 
 
 ## Key Steps
