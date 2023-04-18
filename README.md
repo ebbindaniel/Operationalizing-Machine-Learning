@@ -107,7 +107,7 @@ The deployed model provides the swagger.json an we use the swagger.sh and serve.
 
 **Step 6: Consume Model Endpoints**
 
-Here we copy the REST endpoint URL and the Authentivation key from the UI and update the endpoints.py file.
+Here we copy the REST endpoint URL and the Authentication key from the UI and update the endpoints.py file.
 
 Once the code runs its takes the JSON input we provided and gives us a result in a JSON format. 
 
@@ -148,8 +148,7 @@ The Published Pipeline shows the Status as active with a REST Endpoint link.
 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 
-The Screencast recording to demonstrate this project can be found <a href='https://archive.ics.uci.edu/ml/datasets/Bank+Marketing'>here</a>
+The Screencast recording to demonstrate this project can be found <a href='https://youtu.be/F1HDzRpC9Eg'>here</a>
 
 
