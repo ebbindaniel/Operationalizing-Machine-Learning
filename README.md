@@ -145,6 +145,23 @@ The Published Pipeline shows the Status as active with a REST Endpoint link.
 
 ![pipeline_data8](screenshots/Step7_pipeline_Overview.png?raw=true "pipeline_data8")
 
+This Can also be viewed from the Azure ML Studio UI, 
+
+Completed Pipeline Jobs from the Jobs section with Job type as Pipeline and status completed
+
+![pipeline_job](screenshots/Step7_pipeline_job_completed.png?raw=true "pipeline_job")
+
+Under Pipelines > Pipeline Jobs: The Various pipelines and the respective completed status can be viewed. 
+
+![pipeline_job_done](screenshots/Step7_pipeline1_created.png?raw=true "pipeline_job_done")
+
+We can also View Status Under Pipeline > Pipeline Endpoints for the pipeline and ACTIVE Status. 
+
+![pipeline_status](screenshots/Step7_deployed_pipeline1.png?raw=true "pipeline_status")
+
+Once we click the on the pipeline and go to the Published Pipeline Overview Page we can see the Status as ACTIVE and the REST endpoint.
+
+![pipeline_view](screenshots/Step7_pipeline_overview_1.png?raw=true "pipeline_view")
 
 
 ## Screen Recording
