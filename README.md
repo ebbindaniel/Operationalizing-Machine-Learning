@@ -166,6 +166,14 @@ Once we click the on the pipeline and go to the Published Pipeline Overview Page
 
 ## Screen Recording
 
-The Screencast recording to demonstrate this project can be found <a href='https://youtu.be/F1HDzRpC9Eg'>here</a>
+The Screencast recording to demonstrate this project can be found <a href='https://youtu.be/M00AZOzCkPg'>here</a>
 
 
+## Future Improvements:
+
+This project can be further improved on by:
+
+* To perform an Exploratory Data Analysis to find Bias and Correlation in data
+* Feature Importance of the factors to remove features that do not contribute to the model improvement
+* Enabling Deep Learning for a better prediction
+* Using the Apache Benchmark to set a measure for optimal performance.
