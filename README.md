@@ -164,9 +164,6 @@ Once we click the on the pipeline and go to the Published Pipeline Overview Page
 ![pipeline_view](screenshots/Step7_pipeline_overview_1.png?raw=true "pipeline_view")
 
 
-## Screen Recording
-
-The Screencast recording to demonstrate this project can be found <a href='https://youtu.be/M00AZOzCkPg'>here</a>
 
 
 ## Future Improvements:
